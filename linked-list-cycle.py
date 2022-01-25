@@ -17,6 +17,20 @@ def hasCycle(head: Optional[ListNode]) -> bool:
     return False
 
 
+def hasCycletwopointer(head: Optional[ListNode]) -> bool:
+    single = head
+    try:
+        double = head.next
+        while True:
+            single = single.next
+            double = double.next.next
+            if single == double:
+                return True
+        return False
+    except:
+        return False
+
+
 # Making Linked list
 i = 2
 head = ListNode(1)
@@ -26,5 +40,6 @@ while i < 6:
     temp = temp.next
     i += 1
 
-head.next.next.next.next.next = head.next.next.next
+head.next.next.next.next.next = head.next.next
 print(hasCycle(head))
+print(hasCycletwopointer(head))
