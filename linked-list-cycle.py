@@ -26,7 +26,6 @@ def hasCycletwopointer(head: Optional[ListNode]) -> bool:
             double = double.next.next
             if single == double:
                 return True
-        return False
     except:
         return False
 
